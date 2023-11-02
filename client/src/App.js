@@ -1,4 +1,3 @@
-import './App.css';
 import Product from './components/product';
 import Navbar from './components/navbar';
 import { Box } from '@mui/material';

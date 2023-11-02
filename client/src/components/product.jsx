@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import {Typography, Container, CardMedia, Button, Box} from "@mui/material";
+import {Typography, Container, Button, Box} from "@mui/material";
 import {LazyLoadImage} from "react-lazy-load-image-component";
 
 const Product = () => {
@@ -19,8 +19,8 @@ const Product = () => {
       {product ? (
         <>
           <Container
-            maxWidth="md"
             sx={{
+              maxWidth: "md",
               "& > span": {
                 width: "100%",
                 textAlign: "center",
@@ -77,7 +77,6 @@ const Product = () => {
             </Typography>
             <Button
               variant="contained"
-              color="primary"
               sx={{
                 padding: {
                   xs: "8px 22px 8px",
@@ -129,7 +128,6 @@ const Product = () => {
             />
             <Box
               component="ul"
-              className="product-details"
               sx={{
                 padding: 0,
                 color: "white",

@@ -27,8 +27,8 @@ function Navbar() {
   return (
     <>
       <AppBar
-        position="static"
         sx={{
+          position: "static",
           background: "transparent",
           boxShadow: "0 0",
         }}
