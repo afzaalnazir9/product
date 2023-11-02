@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
 import {Typography, Container, CardMedia, Button, Box} from "@mui/material";
+import {LazyLoadImage} from "react-lazy-load-image-component";
 
 const Product = () => {
   const [product, setProduct] = useState(null);
@@ -9,7 +10,7 @@ const Product = () => {
       .then((response) => response.json())
       .then((data) => setProduct(data))
       .catch((err) => {
-        console.log("error", err);
+        console.log("error", err); 
       });
   }, []);
 
@@ -17,9 +18,20 @@ const Product = () => {
     <>
       {product ? (
         <>
-          <Container maxWidth="md">
-            <CardMedia
-              component="img"
+          <Container
+            maxWidth="md"
+            sx={{
+              "& > span": {
+                width: "100%",
+                textAlign: "center",
+              },
+            }}
+          >
+            <Box
+              component={LazyLoadImage}
+              effect="blur"
+              src={product.image}
+              alt={product.name}
               sx={{
                 width: {
                   xs: "85%",
@@ -31,8 +43,6 @@ const Product = () => {
                   sm: "-50px auto 0",
                 },
               }}
-              image={product.image}
-              alt={product.name}
             />
           </Container>
           <Box
